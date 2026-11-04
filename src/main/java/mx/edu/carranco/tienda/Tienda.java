@@ -19,7 +19,7 @@ public class Tienda extends Activity {
  root.setOnApplyWindowInsetsListener((v,i)->{v.setPadding(i.getSystemWindowInsetLeft(),i.getSystemWindowInsetTop(),i.getSystemWindowInsetRight(),i.getSystemWindowInsetBottom());return i;});
  web=new WebView(this);root.addView(web);
  progress=new ProgressBar(this,null,android.R.attr.progressBarStyleHorizontal);root.addView(progress,new FrameLayout.LayoutParams(-1,8,Gravity.TOP));
- panel=new LinearLayout(this);panel.setBackgroundColor(Color.rgb(251,247,239));panel.setOrientation(1);panel.setGravity(Gravity.CENTER);root.addView(panel);
+ panel=new LinearLayout(this);panel.setBackgroundColor(Color.rgb(251,247,239));panel.setOrientation(LinearLayout.VERTICAL);panel.setGravity(Gravity.CENTER);root.addView(panel);
  TextView msg=new TextView(this);msg.setText("No pudimos abrir la tienda. Revisa tu conexión.");panel.addView(msg);
  Button retry=new Button(this);retry.setText("Volver a intentar");panel.addView(retry);retry.setOnClickListener(v->web.loadUrl(HOME));panel.setVisibility(View.GONE);
  web.getSettings().setJavaScriptEnabled(true); web.getSettings().setDomStorageEnabled(true);
